@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Înregistrare Recenzie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Înregistrare Recenzie</h1>
+        <form action="procesare_recenzie.php" method="POST">
+            <label for="client_id">ID Client:</label>
+            <input type="number" id="client_id" name="client_id" required>
+
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <label for="comentariu">Comentariu:</label>
+            <textarea id="comentariu" name="comentariu" required></textarea>
+             
+            <label for="id_mobila">ID Mobilă:</label>
+            <input type="number" id="id_mobila" name="id_mobila" required>
+
+            <label for="data_recenzie">Data Recenzie:</label>
+            <input type="date" id="data_recenzie" name="data_recenzie" value="<?php echo date('Y-m-d'); ?>" required>
+        </form>
+        <div style="text-align: center; padding-top: 5px;">
+            <button type="submit" style="background-color: #5bc0de; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px;">
+                Înregistrează
+            </button>
+        </div>
+    </form>
+    <a href="afisare_recenzie.php">
+        <button style="
+            background-color: #5bc0de;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        ">Afișează Recenzii</button>
+    </a>  
+    <div style="display: flex; justify-content: space-evenly; align-items: center; padding: 5px 0;">
+        <a href="search_recenzie.php">
+            <button style="background-color: #5bc0de; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+                Caută Recenzie
+            </button>
+        </a>
+        <a href="filter_recenzie.php">
+            <button style="background-color: #5bc0de; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+                Filtrează Recenzie
+            </button>
+        </a>
+        <a href="sort_recenzie.php">
+            <button style="background-color: #5bc0de; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+                Sortează Recenzie
+            </button>
+        </a>
+      <!-- <a href="upload_recenzie.php">
+            <button style="background-color: #5bc0de; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+                Încarcă Document
+            </button> 
+        </a> -->
+        <a href="interogari_recenzii.php">
+            <button style="background-color: #5bc0de; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+                Interogari
+            </button>
+        </a> 
+    </div>
+    </div>
+</body>
+</html>
